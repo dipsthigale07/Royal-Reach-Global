@@ -40,7 +40,6 @@ body {
     overflow-x: hidden;
 }
 
-
 /* .box .imageHolder img {
     transition: transform 0.5s ease, filter 0.5s ease;
     transform-origin: center center;
@@ -151,7 +150,6 @@ section:after {
     display: block;
     padding-top: 100%;
 }
-
 
 .imageHolder {
     position: absolute;
@@ -279,7 +277,6 @@ section:after {
     transform: scaleX(1);
 }
 
-/* Mobile menu toggle */
 .menuToggle,
 .menuClose {
     display: none;
@@ -290,7 +287,6 @@ section:after {
     color: var(--text-light);
 }
 
-/* Banner */
 .banner {
     position: relative;
     width: 100%;
@@ -309,7 +305,6 @@ section:after {
     z-index: 0;
 }
 
-/* Dark overlay */
 .banner::before {
     content: "";
     position: absolute;
@@ -322,7 +317,6 @@ section:after {
     clip-path: polygon(100% 0%, 100% 76%, 57% 87%, 0 100%, 0 0, 25% 0%);
 }
 
-/* Banner Overlay */
 .bannerOverlay {
     position: absolute;
     top: 50%;
@@ -345,7 +339,6 @@ section:after {
     margin-bottom: 20px;
 }
 
-/* Learn More Button (kept animation) */
 .bannerBtn {
     font-size: 20px;
     display: inline-block;
@@ -361,7 +354,6 @@ section:after {
     text-decoration: none;
 }
 
-/* Overlay effect */
 .bannerBtn::after {
     content: '';
     position: absolute;
@@ -374,14 +366,12 @@ section:after {
     z-index: 1;
 }
 
-/* Text container */
 .bannerBtn span {
     position: relative;
     z-index: 2;
     transition: color 0.3s ease;
 }
 
-/* Hover effect */
 .bannerBtn:hover::after {
     height: 100%;
 }
@@ -390,7 +380,6 @@ section:after {
     color: var(--primary);
 }
 
-/* Scroll effect */
 .scrolled {
     background: #fff;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -406,7 +395,6 @@ section:after {
     background: #000;
 }
 
-/* About Section */
 .aboutSection {
     color: var(--text-dark);
     position: relative;
@@ -434,12 +422,10 @@ section:after {
 
     50% {
         transform: translateY(-15px);
-        /* move up */
     }
 
     100% {
         transform: translateY(0);
-        /* back to start */
     }
 }
 
@@ -447,7 +433,6 @@ section:after {
     padding-top: 85%;
 }
 
-/* Heading */
 .innerContainer h2 {
     font-size: 40px;
     margin: 0;
@@ -456,10 +441,6 @@ section:after {
     text-align: center;
     margin-bottom: 50px;
 }
-
-/* .aboutSection h2 {
-    margin-bottom: 0;
-} */
 
 .aboutContent h2::after {
     content: "";
@@ -509,7 +490,6 @@ section:after {
 .whyChooseSection {
     position: relative;
     overflow: hidden;
-    /* padding: 10px; */
 }
 
 .whyChooseSection .box,
@@ -531,7 +511,6 @@ section:after {
     transition: max-height 0.5s ease;
     overflow: hidden;
     border: 1px solid #e7e7e7;
-
 }
 
 .whyChooseVisibleContent {
@@ -562,7 +541,6 @@ section:after {
     transition: opacity 0.4s ease;
 }
 
-/* Hover Effect */
 .whyChooseSection:hover .showSectionHeading {
     max-height: 100%;
     border-radius: 0 0 12px 12px;
@@ -576,7 +554,6 @@ section:after {
     opacity: 1;
 }
 
-/* --- Your existing CSS (unchanged) --- */
 .whyChooseSection .box::before {
     padding-top: 40%;
 }
@@ -664,7 +641,6 @@ section:after {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
-/* contact us section  */
 .contactUsContainer .flexWrap {
     align-items: center;
 }
@@ -711,7 +687,6 @@ section:after {
     align-items: start;
     flex-wrap: nowrap;
 }
-
 
 .contactInfo .contactInfoGroup img {
     padding: 7px;
@@ -765,11 +740,6 @@ section:after {
     padding-bottom: 20px;
 }
 
-/* 
-.formContainer .formGroup {
-    margin-bottom: 15px;
-} */
-
 .formGroup .inputContainer {
     display: flex;
     align-items: center;
@@ -817,7 +787,6 @@ section:after {
 
 .formError.show {
     visibility: visible;
-    /* shown when .show is added */
 }
 
 .formContainer .formButton {
@@ -912,8 +881,6 @@ body.no-scroll {
     }
 }
 
-
-/* Error box overlay */
 .errorBox {
     position: fixed;
     inset: 0;
@@ -924,7 +891,6 @@ body.no-scroll {
     z-index: 9999;
 }
 
-/* Error box styling */
 .errorContent {
     background: #fff;
     padding: 25px 30px;
@@ -939,7 +905,6 @@ body.no-scroll {
 
 .errorTitle {
     color: var(--error);
-    ;
     font-size: 22px;
 }
 
@@ -965,7 +930,6 @@ body.no-scroll {
     background: rgb(150, 22, 22);
 }
 
-/* Overlay background */
 .loadingOverlay {
     position: fixed;
     top: 0;
@@ -974,7 +938,6 @@ body.no-scroll {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     display: none;
-    /* hidden by default */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -983,11 +946,9 @@ body.no-scroll {
     font-size: 18px;
 }
 
-/* Spinner animation */
 .loader {
     border: 4px solid #f3f3f3;
     border-top: 4px solid #4caf50;
-    /* green spinner */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -1004,7 +965,6 @@ body.no-scroll {
         transform: rotate(360deg);
     }
 }
-
 
 .businessCards {
     padding: 100px 0;
@@ -1107,13 +1067,6 @@ body.no-scroll {
     flex-wrap: nowrap;
     gap: 10px;
 }
-
-/* .businessCards .ownerInfo svg {
-    border-radius: 50%;
-    color: var(--primary);
-    flex: 0 0 auto;
-    cursor: pointer;
-} */
 
 .businessCards .ownerDetails h5 {
     font-size: 16px;
@@ -1507,7 +1460,6 @@ footer .footerContent .middleSideFooter img:hover,
         font-size: 16px;
     }
 
-    /* Paragraph hidden initially */
     .whyChooseSectionOverlay {
         opacity: 1;
         transform: none;
@@ -1519,7 +1471,6 @@ footer .footerContent .middleSideFooter img:hover,
         padding-top: 5px;
     }
 
-    /* Show paragraph when expanded */
     .whyChooseSection.expanded .whyChooseSectionOverlay {
         max-height: 300px;
     }
