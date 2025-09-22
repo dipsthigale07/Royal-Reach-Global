@@ -57,7 +57,6 @@
             <div class="innerContainer">
                 <h2>About Us</h2>
                 <div class="aboutContainer flexWrap">
-                    <!-- Image -->
                     <div class="aboutImage wp-6">
                         <div class="box">
                             <div class="imageHolder">
@@ -66,8 +65,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Content -->
                     <div class="aboutContent wp-6">
                         <p>
                             Welcome to <strong>Royal Reach Global</strong>, a trusted name in manufacturing, export, and
@@ -107,7 +104,6 @@
             <div class="innerContainer">
                 <h2>Contact Us</h2>
                 <div class="contactUsContainer fadeInUp flexWrap">
-                    <!-- Image -->
                     <div class="contactUsImage wp-6">
                         <div class="box">
                             <div class="imageHolder">
@@ -185,7 +181,6 @@
                                     <div class="formError" id="phoneError">Please enter a valid 10-digit phone
                                         number.</div>
                                 </div>
-
                                 <div class="formGroup">
                                     <div class="inputContainer">
                                         <textarea id="message" class="formTextarea" name="message"
@@ -198,8 +193,6 @@
                                 <button type="submit" class="formButton">Get In Touch</button>
                             </form>
                         </div>
-
-
                     </div>
                 </div>
                 <!-- business cards  -->
@@ -271,7 +264,6 @@
                                         rel="noopener noreferrer">
                                         <img src="assets/SVG/twitterWhite.svg" alt="twitter-icon">
                                     </a>
-
                                 </div>
                             </div>
                         </div>
@@ -328,7 +320,6 @@
                                         rel="noopener noreferrer">
                                         <img src="assets/SVG/twitterWhite.svg" alt="twitter-icon">
                                     </a>
-
                                 </div>
                             </div>
                         </div>
