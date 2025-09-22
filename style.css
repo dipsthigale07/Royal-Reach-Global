@@ -1,0 +1,1578 @@
+:root {
+    --primary: #556B2F;
+    --secondary: #F5F5DC;
+    --text-dark: #111;
+    --text-light: #fff;
+    --error: rgb(222, 61, 61);
+    --hover-color: #3c4a23;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+:focus-visible {
+    outline: #000 auto 0px;
+}
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background: #fff;
+    font-size: 20px;
+    line-height: normal;
+    letter-spacing: 0;
+    display: flex;
+    flex-direction: column;
+    word-break: break-word;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* .box .imageHolder img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    transform-origin: center center;
+}
+
+.box:hover .imageHolder img {
+    transform: scale(1.1);
+    filter: brightness(1.05);
+} */
+
+.flexWrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    list-style: none;
+}
+
+.wp-12 {
+    width: 100%;
+}
+
+.wp-11 {
+    width: 91.66666667%;
+}
+
+.wp-10 {
+    width: 83.33333333%;
+}
+
+.wp-9 {
+    width: 75%;
+}
+
+.wp-8 {
+    width: 66.66666667%;
+}
+
+.wp-7 {
+    width: 58.33333333%;
+}
+
+.wp-6 {
+    width: 50%;
+}
+
+.wp-5 {
+    width: 41.66666667%;
+}
+
+.wp-4 {
+    width: 33.33%;
+}
+
+.wp-3 {
+    width: 25%;
+}
+
+.wp-2 {
+    width: 16.66666667%;
+}
+
+.wp-1 {
+    width: 8.33333333%;
+}
+
+.innerContainer {
+    max-width: 1440px;
+    margin: 0 auto;
+    /* padding: 0 100px; */
+    padding-left: max(30px, min(30px + (100 - 30) * ((100vw - 1024px) / (1440 - 1024)), 100px));
+    padding-right: max(30px, min(30px + (100 - 30) * ((100vw - 1024px) / (1440 - 1024)), 100px));
+    font-size: 14px;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    scroll-margin-top: 160px;
+    margin-bottom: 50px;
+    background-color: #fff;
+}
+
+section:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+.colorChange {
+    color: var(--primary);
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+}
+
+.box::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+
+.imageHolder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    line-height: 0;
+    border: 0;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.OF-cover {
+    object-fit: cover;
+    font-family: 'object-fit: cover';
+    object-position: center center;
+    font-family: 'object-fit: cover; object-position: center center';
+    width: 100%;
+    height: 100%;
+}
+
+.fadeIn {
+    opacity: 0;
+    transition: opacity .7s cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition: opacity .7s cubic-bezier(.4, 0, .2, 1);
+    -moz-transition: opacity .7s cubic-bezier(.4, 0, .2, 1);
+    -o-transition: opacity .7s cubic-bezier(.4, 0, .2, 1);
+}
+
+.fadeIn.animated {
+    opacity: 1
+}
+
+.fadeInUp {
+    -webkit-transform: translateY(40px);
+    -moz-transform: translateY(40px);
+    transform: translateY(40px);
+    opacity: 0;
+    transition: opacity .7s cubic-bezier(.4, 0, .2, 1), transform .7s cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition: opacity .7s cubic-bezier(.4, 0, .2, 1), transform .7s cubic-bezier(.4, 0, .2, 1);
+    -moz-transition: opacity .7s cubic-bezier(.4, 0, .2, 1), transform .7s cubic-bezier(.4, 0, .2, 1);
+    -o-transition: opacity .7s cubic-bezier(.4, 0, .2, 1), transform .7s cubic-bezier(.4, 0, .2, 1);
+}
+
+.fadeInUp.animated {
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+/* custom css */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logo .box {
+    width: 250px;
+    height: auto;
+}
+
+.logo .box::before {
+    padding-top: 20%;
+}
+
+.logo .box .imageHolder {
+    background: transparent;
+    width: 100%;
+    height: auto;
+}
+
+.logo .box .imageHolder img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.3s;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    padding: 5px 0;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Mobile menu toggle */
+.menuToggle,
+.menuClose {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    clip-path: polygon(100% 0%, 100% 76%, 57% 87%, 0 100%, 0 0, 25% 0%);
+}
+
+.bannerVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark overlay */
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    clip-path: polygon(100% 0%, 100% 76%, 57% 87%, 0 100%, 0 0, 25% 0%);
+}
+
+/* Banner Overlay */
+.bannerOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-light);
+    z-index: 5;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.bannerOverlay h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.bannerOverlay p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Learn More Button (kept animation) */
+.bannerBtn {
+    font-size: 20px;
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--primary);
+    color: var(--secondary);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+/* Overlay effect */
+.bannerBtn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 0%;
+    background: var(--secondary);
+    transition: height 0.3s ease-in-out;
+    z-index: 1;
+}
+
+/* Text container */
+.bannerBtn span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.bannerBtn:hover::after {
+    height: 100%;
+}
+
+.bannerBtn:hover span {
+    color: var(--primary);
+}
+
+/* Scroll effect */
+.scrolled {
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scrolled .logo,
+.scrolled .menu a,
+.scrolled .menuToggle {
+    color: var(--text-dark);
+}
+
+.scrolled .menu a::after {
+    background: #000;
+}
+
+/* About Section */
+.aboutSection {
+    color: var(--text-dark);
+    position: relative;
+    font-size: 16px;
+}
+
+.aboutContainer.flexWrap {
+    align-items: center;
+}
+
+.aboutImage,
+.contactUsImage .imageHolder {
+    background: #fff;
+}
+
+.aboutImage,
+.contactUsImage .imageHolder img {
+    animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* move up */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* back to start */
+    }
+}
+
+.aboutImage .box::before {
+    padding-top: 85%;
+}
+
+/* Heading */
+.innerContainer h2 {
+    font-size: 40px;
+    margin: 0;
+    color: var(--primary);
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* .aboutSection h2 {
+    margin-bottom: 0;
+} */
+
+.aboutContent h2::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.aboutContent p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin: 0;
+}
+
+.aboutContent h3 {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.aboutFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.aboutFeatures li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.aboutUsContinue h2 {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 25px 0;
+}
+
+.whyChooseSectionOuter {
+    padding: 10px;
+}
+
+.whyChooseSection {
+    position: relative;
+    overflow: hidden;
+    /* padding: 10px; */
+}
+
+.whyChooseSection .box,
+.whyChooseSection img {
+    border-radius: 12px;
+}
+
+.showSectionHeading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 60px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-dark);
+    border-radius: 0 0 12px 12px;
+    padding: 15px 20px;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+
+}
+
+.whyChooseVisibleContent {
+    display: flex;
+    align-items: center;
+}
+
+.showSectionHeading h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.showSectionHeading img {
+    height: 20px;
+    width: 20px;
+    transition: transform 0.3s ease;
+}
+
+.whyChooseSection:hover .showSectionHeading img {
+    transform: rotate(90deg);
+}
+
+.whyChooseSectionOverlay {
+    font-size: 16px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Hover Effect */
+.whyChooseSection:hover .showSectionHeading {
+    max-height: 100%;
+    border-radius: 0 0 12px 12px;
+}
+
+.whyChooseSection:hover .showSectionHeading .whyChooseVisibleContent {
+    color: var(--primary);
+}
+
+.whyChooseSection:hover .whyChooseSectionOverlay {
+    opacity: 1;
+}
+
+/* --- Your existing CSS (unchanged) --- */
+.whyChooseSection .box::before {
+    padding-top: 40%;
+}
+
+.serviceCardOuter {
+    height: auto;
+    padding: 10px;
+}
+
+.serviceCard {
+    border-radius: 12px;
+    height: 100%;
+    color: var(--text-dark);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: box-shadow 0.5s ease;
+    position: relative;
+}
+
+.serviceCard::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.serviceCard:hover::before {
+    background-color: var(--primary);
+}
+
+.serviceCard .box .imageHolder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 1;
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+}
+
+.serviceCard .box,
+.serviceCard .img {
+    border-radius: 12px 12px 0 0;
+}
+
+.serviceCard .box::before {
+    padding-top: 55%;
+}
+
+.serviceCard img {
+    transition: transform 0.5s ease, filter 0.5s ease;
+    transform-origin: center center;
+}
+
+.serviceCard:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.05);
+}
+
+.serviceCardDetails {
+    padding: 15px 10px 30px 15px;
+}
+
+.serviceCardDetails h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.serviceCardDetails p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.serviceCard:hover {
+    color: var(--primary);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+/* contact us section  */
+.contactUsContainer .flexWrap {
+    align-items: center;
+}
+
+.contactUsForm .formContainer {
+    background: #fff;
+    padding: 15px 15px 15px 20px;
+    width: 100%;
+}
+
+.contactUsContainer .contactUsImage .box::before {
+    padding-top: 50%;
+}
+
+.contactInfo .contactInfoGroupOuter {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.contactInfo .contactInfoGroupOuter.flexWrap {
+    gap: 15px;
+}
+
+.contactUsContainer .contactInfo h4 {
+    color: #000;
+    font-size: 20px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.contactUsContainer .contactInfo h4::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background-color: var(--primary);
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.contactInfoGroup.flexWrap {
+    gap: 10px;
+    align-items: start;
+    flex-wrap: nowrap;
+}
+
+
+.contactInfo .contactInfoGroup img {
+    padding: 7px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    flex: 0 0 auto;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+}
+
+.contactInfo .contactInfoGroup img:hover {
+    background-color: var(--hover-color);
+}
+
+.contactInfoDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contactInfo .contactInfoDetails h5 {
+    font-size: 16px;
+    margin: 0;
+    color: #000;
+}
+
+.contactInfo .contactInfoDetails a {
+    text-decoration: none;
+    color: gray;
+}
+
+.contactInfo .contactInfoDetails span {
+    font-size: 14px;
+    color: gray;
+    text-decoration: none;
+}
+
+.contactUsForm .formContainer h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.contactUsForm .formContainer p {
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+/* 
+.formContainer .formGroup {
+    margin-bottom: 15px;
+} */
+
+.formGroup .inputContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.formContainer .formGroup img {
+    position: absolute;
+    margin-left: 10px;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+    color: #888;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.formContainer .formInput,
+.formTextarea {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #ccc;
+    /* border-radius: 6px; */
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.formContainer .formInput:focus,
+.formTextarea:focus {
+    border-color: var(--primary);
+}
+
+.formContainer .formTextarea {
+    resize: vertical;
+}
+
+.formContainer .formError {
+    font-size: 13px;
+    color: var(--error);
+    margin: 5px 0;
+    visibility: hidden;
+}
+
+.formError.show {
+    visibility: visible;
+    /* shown when .show is added */
+}
+
+.formContainer .formButton {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    /* border-radius: 6px; */
+    background-color: var(--primary);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.formContainer .formButton:hover {
+    background-color: var(--hover-color);
+}
+
+.alertBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+
+.alertBox.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.alertContent {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: scaleIn 0.3s ease;
+    margin: 0 30px;
+}
+
+.alertContent .alertTitle {
+    color: var(--primary);
+    font-size: 22px;
+}
+
+.alertContent .alertMessage {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.alertContent .alertButton {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+.alertContent .alertButton:hover {
+    background-color: var(--hover-color);
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* Error box overlay */
+.errorBox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Error box styling */
+.errorContent {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: scaleIn 0.3s ease;
+    margin: 0 30px;
+}
+
+.errorTitle {
+    color: var(--error);
+    ;
+    font-size: 22px;
+}
+
+.errorMessage {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.errorButton {
+    padding: 10px 20px;
+    background-color: var(--error);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+.errorButton:hover {
+    background: rgb(150, 22, 22);
+}
+
+/* Overlay background */
+.loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Spinner animation */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4caf50;
+    /* green spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.businessCards {
+    padding: 100px 0;
+    background: #f9f9f6;
+    margin-top: 30px;
+}
+
+.mapIntegration {
+    padding: 0 20px;
+}
+
+.mapIntegration iframe {
+    border: 0;
+    border-radius: 6px;
+    height: 100%;
+    width: 100%;
+}
+
+.mapIntegration p {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.businessDetailsOuter {
+    padding: 10px;
+}
+
+.businessCards .businessDetails {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: -webkit-fill-available;
+}
+
+.businessCards .businessDetails:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 28px rgba(0, 0, 0, 0.25);
+}
+
+.businessCards .businessDetails.wp-3 {
+    width: 30%;
+}
+
+.businessCards .businessCardHeader {
+    background-color: var(--primary);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-50px);
+}
+
+.businessCards .businessCardHeader {
+    color: #fff;
+}
+
+.businessCards .businessCardHeader .ownerProfile {
+    background-color: #ffff;
+    border-radius: 50%;
+    width: 50%;
+}
+
+.businessCards .businessCardHeader .ownerProfile .box {
+    border-radius: 50%;
+}
+
+.businessCards .businessCardHeader .ownerProfile .box::before {
+    padding: 60%;
+}
+
+.businessCards .businessCardHeader h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    padding: 8px 0 0 0;
+}
+
+.businessCards .businessCardHeader span {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 6px 0;
+}
+
+.businessCards .businessCardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* padding: 25px 0; */
+}
+
+.businessCards .ownerInfo.flexWrap {
+    align-items: start;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+/* .businessCards .ownerInfo svg {
+    border-radius: 50%;
+    color: var(--primary);
+    flex: 0 0 auto;
+    cursor: pointer;
+} */
+
+.businessCards .ownerDetails h5 {
+    font-size: 16px;
+    margin: 0;
+    color: #000;
+}
+
+.businessCards .ownerDetails span {
+    font-size: 13px;
+    color: gray;
+    text-decoration: none;
+}
+
+.businessCards .ownerDetails span a {
+    text-decoration: none;
+    color: gray;
+}
+
+.businessCards .ownerDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.businessCards .businessCardFooter {
+    background-color: var(--primary);
+    border-radius: 12px;
+    padding: 10px;
+    /* margin-bottom: -50px; */
+    transform: translateY(35px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.businessCards .businessCardFooter.flexWrap {
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.businessCards .businessCardFooter .businessCardIcons {
+    color: #fff;
+}
+
+footer {
+    background-color: var(--secondary);
+    padding: 50px 0;
+}
+
+footer .footerContent .leftSideFooter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+footer .leftSideFooter a {
+    color: var(--primary);
+    font-size: 30px;
+}
+
+footer .leftSideFooter p {
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 13px;
+}
+
+.middleSideFooter.flexWrap {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footerContactGroup.flexWrap {
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.footerContactGroup a {
+    text-decoration: none;
+}
+
+.footerContactGroup img {
+    padding: 7px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    flex: 0 0 auto;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+}
+
+.footerContactDetails h5 {
+    font-size: 16px;
+    margin: 0;
+    color: #000;
+}
+
+.footerContactDetails span {
+    font-size: 14px;
+    color: gray;
+    font-weight: 400;
+}
+
+.footerContactDetails span a {
+    color: gray;
+    text-decoration: none;
+}
+
+footer .footerContactIcons.flexWrap {
+    gap: 15px;
+}
+
+footer .rightSideFooter .footerContactIcons a {
+    text-decoration: none;
+}
+
+footer .rightSideFooter .footerContactIcons img {
+    padding: 7px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    color: var(--text-light);
+    background-color: var(--primary);
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.rightSideFooter .footerContactDetails.flexWrap {
+    gap: 15px;
+}
+
+footer .footerContent .middleSideFooter img:hover,
+.rightSideFooter .footerContactIcons img:hover {
+    background-color: var(--hover-color);
+}
+
+/* media query start  */
+
+@media (max-width:1000px) {
+
+    .aboutImage .box::before {
+        padding-top: 100%;
+    }
+
+    .businessCards .businessDetails.wp-3 {
+        width: 35%;
+    }
+}
+
+@media (max-width:850px) {
+    .serviceCardOuter.wp-4 {
+        width: 50%;
+    }
+
+    .businessCards {
+        padding: 70px 0;
+    }
+
+    .businessCards .businessDetails.wp-3 {
+        width: 40%;
+    }
+
+    .businessCards.flexWrap {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .businessCards .wp-6 {
+        width: 100%;
+    }
+
+    .businessCards .ownerCards .businessDetailsOuter.wp-6 {
+        width: 50%;
+    }
+
+    .mapIntegration {
+        padding: 0;
+        text-align: center;
+    }
+
+    .mapIntegration iframe {
+        min-height: 300px;
+        height: 300px;
+        width: 80%;
+    }
+}
+
+@media (max-width:800px) {
+    .contactUsContainer.flexWrap {
+        flex-direction: column;
+    }
+
+    .contactUsContainer .wp-6 {
+        width: 100%;
+    }
+
+    .contactUsContainer .contactUsImage {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width:550px) {
+
+    .mapIntegration iframe {
+        width: 100%;
+    }
+
+    .businessCards .ownerCards.flexWrap {
+        gap: 100px;
+        justify-content: center;
+    }
+
+    .businessCards .ownerCards .businessDetailsOuter.wp-6 {
+        width: 70%;
+    }
+
+}
+
+@media (max-width:500px) {
+    .serviceCardOuter.wp-4 {
+        width: 100%;
+    }
+
+    .whyChooseSectionOuter.wp-6 {
+        width: 100%;
+    }
+
+    .businessCards .businessDetails {
+        margin-bottom: 80px;
+    }
+
+    .businessCards .businessDetails.wp-3 {
+        width: 100%;
+    }
+
+    .businessCards .ownerCards.flexWrap {
+        gap: 0px;
+        justify-content: center;
+    }
+
+    .businessCards .ownerCards .businessDetailsOuter.wp-6 {
+        width: 100%;
+    }
+
+    .businessCards {
+        padding: 70px 0 0 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100%;
+        background: var(--secondary);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 60px 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+        gap: 10px;
+        color: var(--primary);
+    }
+
+    .menu a {
+        color: var(--primary);
+        padding: 10px 0;
+    }
+
+    .menu a::after {
+        display: none;
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menuToggle {
+        display: block;
+    }
+
+    .menuClose {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        color: var(--primary);
+    }
+
+    .bannerBtn::after {
+        display: none;
+    }
+
+    .bannerBtn span {
+        color: var(--secondary);
+    }
+
+    .bannerBtn:hover span {
+        color: var(--secondary);
+    }
+
+    .bannerOverlay {
+        padding: 0 30px;
+    }
+
+    .bannerOverlay h1 {
+        font-size: 35px;
+    }
+
+    .bannerOverlay p,
+    .bannerBtn {
+        font-size: 17px;
+    }
+
+    .aboutContainer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section {
+        margin-bottom: 35px;
+    }
+
+    .innerContainer h2 {
+        margin-bottom: 35px;
+        font-size: 35px;
+    }
+
+    .aboutContent h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .aboutImage.wp-6 {
+        width: 100%;
+    }
+
+    .aboutContent.wp-6 {
+        width: 100%;
+    }
+
+    .aboutContent {
+        text-align: left;
+    }
+
+    .aboutContent h3 {
+        font-size: 18px;
+    }
+
+    .aboutContent p {
+        font-size: 15px;
+    }
+
+    .aboutImage .box::before {
+        padding-top: 70%;
+    }
+
+    .aboutUsContinue h2 {
+        font-size: 20px;
+        margin-top: 35px;
+    }
+
+    .whyChooseSection {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 12px;
+    }
+
+    .whyChooseSection img,
+    .whyChooseSection .box {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .showSectionHeading {
+        position: relative;
+        transform: none;
+        display: block;
+        cursor: pointer;
+        padding: 10px 10px 15px 10px;
+    }
+
+    .showSectionHeading img {
+        transition: transform 0.3s ease;
+    }
+
+    .whyChooseSection.expanded .showSectionHeading img {
+        transform: rotate(90deg);
+    }
+
+    .showSectionHeading h4 {
+        font-size: 16px;
+    }
+
+    /* Paragraph hidden initially */
+    .whyChooseSectionOverlay {
+        opacity: 1;
+        transform: none;
+        max-height: 0;
+        margin: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        font-size: 14px;
+        padding-top: 5px;
+    }
+
+    /* Show paragraph when expanded */
+    .whyChooseSection.expanded .whyChooseSectionOverlay {
+        max-height: 300px;
+    }
+
+    .serviceCard {
+        margin-bottom: 20px;
+    }
+
+    .serviceCardDetails h4 {
+        font-size: 16px;
+    }
+
+    .serviceCardDetails p {
+        font-size: 14px;
+    }
+
+    .contactUsForm .formContainer h3 {
+        font-size: 20px;
+    }
+
+    .contactUsForm .formContainer p {
+        font-size: 15px;
+    }
+
+    .formInput::placeholder,
+    .formTextarea::placeholder {
+        font-size: 13px;
+    }
+
+    .formContainer .formInput,
+    .formTextarea {
+        font-size: 14px;
+    }
+
+    .formContainer .formButton {
+        font-size: 14px;
+    }
+
+    .contactUsForm .alertContent .alertButton {
+        font-size: 15px;
+    }
+
+    .errorButton {
+        font-size: 15px;
+    }
+
+    footer .footerContent.flexWrap {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    footer .footerContent.flexWrap .wp-4 {
+        width: 100%;
+    }
+
+}
