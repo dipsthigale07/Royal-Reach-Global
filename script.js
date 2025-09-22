@@ -1,4 +1,4 @@
-window.history.scrollRestoration = "manual"; // prevent browser from restoring scroll
+window.history.scrollRestoration = "manual";
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
@@ -15,7 +15,7 @@ if (bannerBtn) {
     bannerBtn.addEventListener("click", (e) => {
         e.preventDefault();
         document.querySelector("#about").scrollIntoView({ behavior: "smooth" });
-        history.replaceState(null, null, " "); // removes #about from URL
+        history.replaceState(null, null, " ");
     });
 }
 
@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     elements.forEach(el => {
         if (el.classList.contains("bannerOverlay")) {
-            // animate immediately on load
             el.classList.add("animated");
         } else {
             observer.observe(el);
@@ -49,36 +48,32 @@ const navLogo = document.querySelector('.navLogo');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
-        navLogo.src = "assets/logo.webp"; // colored logo
+        navLogo.src = "assets/logo.webp";
     } else {
         navbar.classList.remove('scrolled');
-        navLogo.src = "assets/logoWhite.webp"; // white logo
+        navLogo.src = "assets/logoWhite.webp";
     }
 });
 
-// Mobile menu toggle
 const menuToggle = document.querySelector('.menuToggle');
 const menuClose = document.querySelector('.menuClose');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('.menu a');
 
-// open
 menuToggle.addEventListener('click', () => {
     menu.classList.add('active');
-    document.body.style.overflow = "hidden"; // disable scroll
+    document.body.style.overflow = "hidden";
 });
 
-// close
 menuClose.addEventListener('click', () => {
     menu.classList.remove('active');
-    document.body.style.overflow = ""; // restore scroll
+    document.body.style.overflow = "";
 });
 
-// close menu on link click + smooth scroll
 menuLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         menu.classList.remove('active');
-        document.body.style.overflow = ""; // restore scroll
+        document.body.style.overflow = "";
 
         const targetId = link.getAttribute("href");
         if (targetId.startsWith("#")) {
@@ -121,11 +116,10 @@ const whyChooseData = [
 const whyChooseContainer = document.querySelector('.moreInfoContainer');
 
 whyChooseData.forEach((item, index) => {
-    // Create outer wrapper
+
     const outerCard = document.createElement('div');
     outerCard.classList.add('whyChooseSectionOuter', 'wp-6');
 
-    // Create inner card
     const card = document.createElement('div');
     card.classList.add('whyChooseSection');
 
@@ -147,58 +141,21 @@ whyChooseData.forEach((item, index) => {
     </div>
   `;
 
-    // Append inner card to outer wrapper
     outerCard.appendChild(card);
 
-    // Append outer wrapper to container
     whyChooseContainer.appendChild(outerCard);
 });
-
-
-// const whyChooseContainer = document.querySelector('.moreInfoContainer');
-
-// whyChooseData.forEach((item, index) => {
-//     const card = document.createElement('div');
-//     card.classList.add('whyChooseSection', 'wp-6');
-
-//     card.innerHTML = `
-//     <div class="box">
-//       <div class="imageHolder">
-//         <img src="${item.img}" alt="${item.title}" class="OF-cover">
-//       </div>
-//     </div>
-//     <div class="showSectionHeading">
-//       <div class="whyChooseVisibleContent">
-//         <h4>${item.title}</h4>
-//         <svg class="w-[18px] h-[18px] text-gray-800 dark:text-white" aria-hidden="true"
-//             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-//             viewBox="0 0 24 24">
-//           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-//             stroke-width="1.8" d="m9 5 7 7-7 7" />
-//         </svg>
-//       </div>
-//       <p class="whyChooseSectionOverlay">
-//         ${item.shortDesc}
-//         ${item.longDesc}
-//       </p>
-//     </div>
-//   `;
-
-//     whyChooseContainer.appendChild(card);
-// });
 
 function handleClick(e) {
     const card = e.currentTarget.closest('.whyChooseSection');
     const allCards = document.querySelectorAll('.whyChooseSection');
 
-    // Close all cards first
     allCards.forEach(c => {
         if (c !== card) {
             c.classList.remove('expanded');
         }
     });
 
-    // Toggle the clicked one
     card.classList.toggle('expanded');
 }
 
@@ -210,7 +167,6 @@ function applySmallScreenBehavior() {
             card.querySelector('.showSectionHeading').addEventListener('click', handleClick);
         });
     } else {
-        // Reset on larger screens
         cards.forEach(card => card.classList.remove('expanded'));
     }
 }
@@ -280,11 +236,10 @@ const services = [
 const servicesContainer = document.querySelector(".servicesContainer");
 
 services.forEach(service => {
-    // Create outer wrapper
-    const outer = document.createElement("div");
-    outer.classList.add("serviceCardOuter", "wp-4", "fadeInUp"); // outer gets fadeInUp for animation
 
-    // Create inner service card
+    const outer = document.createElement("div");
+    outer.classList.add("serviceCardOuter", "wp-4", "fadeInUp");
+
     const card = document.createElement("div");
     card.classList.add("serviceCard");
 
@@ -300,14 +255,11 @@ services.forEach(service => {
         </div>
     `;
 
-    // Append card inside outer wrapper
     outer.appendChild(card);
 
-    // Append outer wrapper to container
     servicesContainer.appendChild(outer);
 });
 
-// Animate each outer wrapper on scroll
 const serviceCardsOuter = document.querySelectorAll(".serviceCardOuter");
 
 const observer = new IntersectionObserver((entries) => {
@@ -315,7 +267,7 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const card = entry.target;
             const index = Array.from(serviceCardsOuter).indexOf(card);
-            card.style.transitionDelay = `0.1s`; // stagger
+            card.style.transitionDelay = `0.1s`;
             card.classList.add("animated");
             observer.unobserve(card);
         }
@@ -324,34 +276,30 @@ const observer = new IntersectionObserver((entries) => {
 
 serviceCardsOuter.forEach(card => observer.observe(card));
 
-
 // contact us form validation 
 const form = document.getElementById("contactForm");
 const alertBox = document.getElementById("alertBox");
 
-// Input fields
 const name = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const message = document.getElementById("message");
 
-// Error containers
 const nameError = document.getElementById("nameError");
 const emailError = document.getElementById("emailError");
 const phoneError = document.getElementById("phoneError");
 const messageError = document.getElementById("messageError");
 
-// Email regex pattern
 const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
 function showAlert() {
     alertBox.classList.add("show");
-    document.body.classList.add("no-scroll");  // disable scroll
+    document.body.classList.add("no-scroll");
 }
 
 function closeAlert() {
     alertBox.classList.remove("show");
-    document.body.classList.remove("no-scroll");  // enable scroll back
+    document.body.classList.remove("no-scroll");
 }
 
 function validateName() {
@@ -394,7 +342,6 @@ function validateMessage() {
     }
 }
 
-// Add live validation on input/blur
 name.addEventListener("input", validateName);
 email.addEventListener("input", validateEmail);
 phone.addEventListener("input", validatePhone);
@@ -456,18 +403,45 @@ function hideLoadingOverlay() {
     if (overlay) overlay.style.display = "none";
 }
 
+// function showCustomError(message) {
+//     const errorBox = document.createElement("div");
+//     errorBox.className = "errorBox";
+//     errorBox.innerHTML = `
+//         <div class="errorContent">
+//             <h3 class="errorTitle">Oops!</h3>
+//             <p class="errorMessage">${message}</p>
+//             <button class="errorButton" onclick="this.parentElement.parentElement.remove()">OK</button>
+//         </div>
+//     `;
+//     document.body.appendChild(errorBox);
+// }
+
 function showCustomError(message) {
-    const errorBox = document.createElement("div");
-    errorBox.className = "errorBox";
-    errorBox.innerHTML = `
-        <div class="errorContent">
-            <h3 class="errorTitle">Oops!</h3>
-            <p class="errorMessage">${message}</p>
-            <button class="errorButton" onclick="this.parentElement.parentElement.remove()">OK</button>
-        </div>
-    `;
-    document.body.appendChild(errorBox);
+    document.body.classList.add("no-scroll");
+
+    let errorBox = document.querySelector(".errorBox");
+    if (!errorBox) {
+        errorBox = document.createElement("div");
+        errorBox.className = "errorBox";
+        errorBox.innerHTML = `
+            <div class="errorContent">
+                <h3 class="errorTitle">Oops!</h3>
+                <p class="errorMessage">${message}</p>
+                <button class="errorButton">OK</button>
+            </div>
+        `;
+        document.body.appendChild(errorBox);
+
+        errorBox.querySelector(".errorButton").addEventListener("click", () => {
+            errorBox.remove();
+            document.body.classList.remove("no-scroll");
+        });
+    } else {
+        errorBox.querySelector(".errorMessage").textContent = message;
+        errorBox.style.display = "flex";
+    }
 }
+
 
 document.getElementById("footerLogo").addEventListener("click", function (e) {
     e.preventDefault();
